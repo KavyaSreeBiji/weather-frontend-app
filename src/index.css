@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sky-day: linear-gradient(160deg, #1a6bb5 0%, #3a9bd5 40%, #87ceeb 100%);
+  --sky-night: linear-gradient(160deg, #0a0e2e 0%, #1a2a6c 40%, #2d4a8a 100%);
+  --sky-cloudy: linear-gradient(160deg, #4a6fa5 0%, #6b8fc7 40%, #9ab0d4 100%);
+  --sky-storm: linear-gradient(160deg, #2c3e50 0%, #3d5166 40%, #566a82 100%);
+  --sky-clear: var(--sky-day);
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --card-border: rgba(255, 255, 255, 0.25);
+  --text-main: #fff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --text-dim: rgba(255, 255, 255, 0.55);
+  --accent: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* background logic is moved to inline styles on the main container to allow dynamic switching */
+  color: var(--text-main);
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+#root {
+  width: 100%;
+}
