@@ -29,13 +29,23 @@ A modern, premium weather forecasting application built with React and Vite. Wea
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Requirements
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+This project requires the following key libraries and packages (all automatically managed and installed via npm, and also listed in `requirements.txt`):
+- **react** & **react-dom**: Core UI framework
+- **lucide-react**: Professional iconography
+- **vite**: Build tool and development server
+
+All exact versions are defined in the `package.json` file.
 
 ### Installation
 
-1. **Clone the repository** (if applicable) or download the source code.
+1. **Clone the repository or Download** from GitHub:
+   - To clone via Git, run this command in your terminal:
+     ```bash
+     git clone https://github.com/KavyaSreeBiji/weather-frontend-app.git
+     ```
+   - Alternatively, you can click the **Code** button on the GitHub repository page and select **Download ZIP**.
 2. **Navigate to the project directory:**
    ```bash
    cd weather-frontend-app

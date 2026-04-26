@@ -1,0 +1,13 @@
+# This is a React/Node.js project.
+# Dependencies are managed via package.json.
+# Run `npm install` to install all required packages.
+
+# Core Packages
+react
+react-dom
+lucide-react
+
+# Development Packages
+vite
+eslint
+@vitejs/plugin-react
