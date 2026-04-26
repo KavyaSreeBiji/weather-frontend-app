@@ -73,7 +73,38 @@ export async function fetchCitySuggestions(q) {
   const url = `${GEOCODE_BASE_URL}/search?name=${encodeURIComponent(q)}&count=5&language=en&format=json`;
   const r = await fetch(url);
   if (!r.ok) throw new Error('API error');
-  return r.json();
+  const data = await r.json();
+
+  if (data.results && data.results.length > 0) {
+    return data;
+  }
+
+  // Fallback to Nominatim for zip codes or missing cities
+  try {
+    const nomUrl = `${NOMINATIM_BASE_URL}/search?q=${encodeURIComponent(q)}&format=json&limit=5`;
+    const nomR = await fetch(nomUrl);
+    if (nomR.ok) {
+      const nomData = await nomR.json();
+      if (nomData && nomData.length > 0) {
+        return {
+          results: nomData.map(item => {
+            const parts = item.display_name.split(',').map(p => p.trim());
+            return {
+              name: item.name || parts[0],
+              admin1: parts.length > 2 ? parts[parts.length - 2] : '',
+              country: parts[parts.length - 1] || '',
+              latitude: parseFloat(item.lat),
+              longitude: parseFloat(item.lon)
+            };
+          })
+        };
+      }
+    }
+  } catch (err) {
+    console.error('Nominatim fallback error:', err);
+  }
+
+  return data;
 }
 
 export async function reverseGeocode(lat, lon) {
