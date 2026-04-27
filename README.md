@@ -2,7 +2,6 @@
 
 A modern, premium weather forecasting application built with React and Vite. WeatherScope provides real-time weather data, dynamic background themes, actionable insights, and robust data export capabilities, all wrapped in a sleek glassmorphism UI.
 
-![WeatherScope Preview](https://via.placeholder.com/800x400.png?text=WeatherScope+Preview)
 
 ## ✨ Features
 
