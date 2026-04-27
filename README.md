@@ -1,5 +1,7 @@
 # WeatherScope 🌤️
 
+**🌍 Live Demo:** [https://weather-frontendapp.netlify.app/](https://weather-frontendapp.netlify.app/)
+
 A modern, premium weather forecasting application built with React and Vite. WeatherScope provides real-time weather data, dynamic background themes, actionable insights, and robust data export capabilities, all wrapped in a sleek glassmorphism UI.
 
 
